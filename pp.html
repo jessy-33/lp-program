@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Launchpad Program</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+
+        .changing-text {
+            font-size: 3em;
+            font-weight: bold;
+            animation: color-change 5s infinite;
+        }
+
+        @keyframes color-change {
+            0% { color: red; }
+            25% { color: blue; }
+            50% { color: green; }
+            75% { color: purple; }
+            100% { color: red; }
+        }
+
+        .button-container {
+            margin: 20px 0;
+        }
+
+        .button {
+            padding: 15px 25px;
+            margin: 10px;
+            border: none;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .button:hover {
+            opacity: 0.8;
+        }
+
+        .cse { background-color: #ff6347; } /* Tomato */
+        .eee { background-color: #4682b4; } /* SteelBlue */
+        .mechanic { background-color: #32cd32; } /* LimeGreen */
+        .civil { background-color: #da70d6; } /* Orchid */
+
+        .it { background-color: #ff4500; } /* OrangeRed */
+        .non-it { background-color: #1e90ff; } /* DodgerBlue */
+
+        .response {
+            font-size: 1.2em;
+            color: #4682b4; /* SteelBlue */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="changing-text">Welcome to Launchpad Program</div>
+
+    <div class="button-container">
+        <h2>Please select your background:</h2>
+        <button class="button cse" onclick="showPreference('CSE')">CSE</button>
+        <button class="button eee" onclick="showPreference('EEE')">EEE</button>
+        <button class="button mechanic" onclick="showPreference('Mechanic')">Mechanic</button>
+        <button class="button civil" onclick="showPreference('Civil')">Civil</button>
+    </div>
+
+    <div class="button-container">
+        <h2>Please select your preference:</h2>
+        <button class="button it" onclick="declareChoice('IT')">IT</button>
+        <button class="button non-it" onclick="declareChoice('Non-IT')">Non-IT</button>
+    </div>
+
+    <div class="response" id="response"></div>
+
+    <script>
+        function showPreference(choice) {
+            document.getElementById('response').innerText = `You have selected ${choice} background. Now, please select your preference:`;
+        }
+
+        function declareChoice(preference) {
+            document.getElementById('response').innerText = `You have chosen ${preference}. Thank you for your responses!`;
+        }
+    </script>
+
+</body>
+</html>
